@@ -16,6 +16,6 @@ public class EntidadPropiedad {
     private Boolean estado;
     private String cod_postal;
 
-    //relacionar
+    //relacionar de uno a muchos con Personl
 
 }
