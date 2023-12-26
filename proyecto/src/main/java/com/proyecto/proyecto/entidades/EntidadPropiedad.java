@@ -26,4 +26,8 @@ public class EntidadPropiedad {
 
     @OneToMany(mappedBy = "id_propiedad", cascade = CascadeType.ALL)
     private List<EntidadManteni> entidadMantenis;
+
+    //relacioni de uno a muchos con Unidades
+    @OneToMany(mappedBy = "id_propiedad", cascade = CascadeType.ALL)
+    private List<EntidadUnidades> entidadUnidades;
 }
