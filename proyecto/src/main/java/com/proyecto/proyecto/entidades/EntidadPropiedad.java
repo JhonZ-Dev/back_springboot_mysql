@@ -3,6 +3,8 @@ package com.proyecto.proyecto.entidades;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tlb_entidades")
 @Data
@@ -17,5 +19,6 @@ public class EntidadPropiedad {
     private String cod_postal;
 
     //relacionar de uno a muchos con Personl
-
+    @OneToMany(mappedBy = "id_propiedad", cascade = CascadeType.ALL)
+    private List<EntidadPersonal> entidadPersonals;
 }
