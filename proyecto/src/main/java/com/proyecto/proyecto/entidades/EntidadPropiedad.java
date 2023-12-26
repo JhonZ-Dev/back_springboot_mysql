@@ -10,5 +10,10 @@ public class EntidadPropiedad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_propiedad;
-    
+    private String nombre;
+    private String direccion;
+    private String ciudad;
+    private Boolean estado;
+    private String cod_postal;
+
 }
