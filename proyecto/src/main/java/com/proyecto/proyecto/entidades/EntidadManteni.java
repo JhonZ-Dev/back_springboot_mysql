@@ -12,5 +12,13 @@ public class EntidadManteni {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_mantenimiento;
 
-    pr
+    private String descripcion;
+    private Float costo;
+    private String fecha_solicitud;
+    private Boolean estado;
+    //relacion de muchos a uno con propiedad
+
+    @ManyToOne( cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_propiedad", referencedColumnName = "id_propiedad")
+    private EntidadPropiedad id_propiedad;
 }
