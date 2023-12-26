@@ -23,4 +23,7 @@ public class EntidadPropiedad {
     private List<EntidadPersonal> entidadPersonals;
 
     //relacion de uno a muchos con manteinmienot
+
+    @OneToMany(mappedBy = "id_propiedad", cascade = CascadeType.ALL)
+    private List<EntidadManteni> entidadMantenis;
 }
