@@ -17,5 +17,7 @@ public class EntidadPersonal {
     //relacion de muchos a uno con propiedades
 
     @ManyToOne(cascade = CascadeType.ALL)
-    private 
+    @JoinColumn(name = "id_propiedad")
+    private EntidadPropiedad id_propiedad;
+
 }
