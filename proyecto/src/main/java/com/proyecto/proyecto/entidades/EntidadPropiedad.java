@@ -6,7 +6,7 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Table(name = "tlb_entidades")
+@Table(name = "tbl_propiedades")
 @Data
 public class EntidadPropiedad {
     @Id
