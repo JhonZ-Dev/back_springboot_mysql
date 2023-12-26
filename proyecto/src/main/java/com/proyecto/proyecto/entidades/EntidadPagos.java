@@ -16,4 +16,9 @@ public class EntidadPagos {
     private String fecha_pago;
     private String metodo_pago;
     private Boolean estado_pago;
+
+    //relacion de muchos a uno con Residentes
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_residentes",referencedColumnName = "id_residentes")
+    private EntidadResidentes id_residentes;
 }
