@@ -38,6 +38,14 @@ public class PersonalServicio {
 
     //editar
     public EntidadPersonal editar(EntidadPersonal personal, Long id_personal){
+        //vaidar si existe el id
+        EntidadPersonal personalExiste = buscarPorId(id_personal);
+        personalExiste.setNombre(personal.getNombre());
+        personalExiste.setPuesto(personal.getPuesto());
+        personalExiste.setTelefono(personal.getTelefono());
+        personalExiste.setEmail(personal.getEmail());
+        personalExiste.setFecha_contratación(personal.getFecha_contratación());
+
 
     }
 
