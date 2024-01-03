@@ -18,4 +18,11 @@ public class PersonalController {
             @PathVariable Long id_propiedad){
         return servicio.guardar(entidadPersonal, id_propiedad);
     }
+
+    //actualizar
+    @PutMapping("editar/{id_personal}")
+    public EntidadPersonal editar( @RequestBody EntidadPersonal entidadPersonal,
+                                   @PathVariable Long id_personal){
+        return servicio.editar(entidadPersonal, id_personal);
+    }
 }
