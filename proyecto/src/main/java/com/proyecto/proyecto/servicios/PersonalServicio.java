@@ -17,7 +17,7 @@ public class PersonalServicio {
     @Autowired
     public PropiedadesRepo propiedadesRepo;
 
-    public EntidadPersonal guardar(EntidadPersonal entidadPersonal, Long id_propiedad){
+    public EntidadPersonal guardar(EntidadPersonal personal, Long id_propiedad){
 
         //obteer la propiedad por su id
         Optional<EntidadPropiedad> propiedadOptional = propiedadesRepo.findById(id_propiedad);
@@ -25,7 +25,10 @@ public class PersonalServicio {
         if(propiedadOptional.isPresent()){
             EntidadPropiedad propiedad = propiedadOptional.get();
             //asignar la propiedad al personal
-            
+            personal.setId_propiedad(propiedad);
+            return repo.save(personal);
+        }else{
+            throw new RuntimeException("No se encontró la propiedad con ID: " + id_propiedad);
         }
     }
 }
