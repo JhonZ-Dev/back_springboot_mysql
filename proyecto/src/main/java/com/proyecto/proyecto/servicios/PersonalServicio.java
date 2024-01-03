@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.function.LongFunction;
 
 @Service
 public class PersonalServicio {
@@ -33,5 +34,18 @@ public class PersonalServicio {
             throw new RuntimeException("No se encontró la propiedad con ID: " + id_propiedad);
         }
     }
+
+
+    //editar
+    public EntidadPersonal editar(EntidadPersonal personal, Long id_personal){
+
+    }
+
+    //buscar por id
+    public EntidadPersonal buscarPorId(Long id_personal){
+        EntidadPersonal personal = this.repo.findById(id_personal).orElse(null);
+        return personal;
+    }
+
 
 }
