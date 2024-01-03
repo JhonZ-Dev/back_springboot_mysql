@@ -14,7 +14,7 @@ public class EntidadPersonal {
     private Long id_personal;
     private String nombre, puesto, telefono;
     private String email;
-    private String fecha_contratación;
+    private String fecha_contratacion;
     //relacion de muchos a uno con propiedades
 
     @JsonIgnore
