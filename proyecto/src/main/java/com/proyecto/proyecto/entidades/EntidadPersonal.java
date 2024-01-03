@@ -1,5 +1,6 @@
 package com.proyecto.proyecto.entidades;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class EntidadPersonal {
     private String fecha_contratación;
     //relacion de muchos a uno con propiedades
 
+    @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn( name = "id_propiedad", referencedColumnName = "id_propiedad")
     private EntidadPropiedad id_propiedad;
