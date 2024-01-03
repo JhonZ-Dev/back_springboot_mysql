@@ -7,6 +7,7 @@ import com.proyecto.proyecto.repositorio.PropiedadesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.LongFunction;
 
@@ -61,6 +62,16 @@ public class PersonalServicio {
     public EntidadPersonal buscarPorId(Long id_personal){
         EntidadPersonal personal = this.repo.findById(id_personal).orElse(null);
         return personal;
+    }
+
+    //listar
+    public List<EntidadPersonal> listarTodos(){
+        return repo.findAll();
+    }
+
+    //elimina
+    public void eliminar(Long id_personal){
+        repo.deleteById(id_personal);
     }
 
 
