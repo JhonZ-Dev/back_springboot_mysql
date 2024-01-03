@@ -37,17 +37,25 @@ public class PersonalServicio {
 
 
     //editar
-    public EntidadPersonal editar(EntidadPersonal personal, Long id_personal){
-        //vaidar si existe el id
-        EntidadPersonal personalExiste = buscarPorId(id_personal);
-        personalExiste.setNombre(personal.getNombre());
-        personalExiste.setPuesto(personal.getPuesto());
-        personalExiste.setTelefono(personal.getTelefono());
-        personalExiste.setEmail(personal.getEmail());
-        personalExiste.setFecha_contratación(personal.getFecha_contratación());
+    public EntidadPersonal editar(EntidadPersonal personal, Long id_personal) {
+        // Validar si existe el ID
+        EntidadPersonal personalExistente = buscarPorId(id_personal);
 
+        if (personalExistente != null) {
+            // Actualizar los campos del personal existente
+            personalExistente.setNombre(personal.getNombre());
+            personalExistente.setPuesto(personal.getPuesto());
+            personalExistente.setTelefono(personal.getTelefono());
+            personalExistente.setEmail(personal.getEmail());
+            personalExistente.setFecha_contratacion(personal.getFecha_contratacion());
 
+            // Guardar y devolver el personal actualizado
+            return repo.save(personalExistente);
+        } else {
+            throw new RuntimeException("No se encontró el personal con ID: " + id_personal);
+        }
     }
+
 
     //buscar por id
     public EntidadPersonal buscarPorId(Long id_personal){
