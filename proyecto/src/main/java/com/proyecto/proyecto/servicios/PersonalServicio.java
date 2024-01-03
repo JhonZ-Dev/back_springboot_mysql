@@ -21,6 +21,11 @@ public class PersonalServicio {
 
         //obteer la propiedad por su id
         Optional<EntidadPropiedad> propiedadOptional = propiedadesRepo.findById(id_propiedad);
-        
+        //verificar si la propiedad existe
+        if(propiedadOptional.isPresent()){
+            EntidadPropiedad propiedad = propiedadOptional.get();
+            //asignar la propiedad al personal
+            
+        }
     }
 }
